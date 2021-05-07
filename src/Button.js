@@ -58,15 +58,14 @@ const ButtonBase = styled.button`
   border-radius: var(--btn-border-radius);
 
   &:focus {
-    outline: 2px solid var(--btn-outline-color);
-    outline-offset: 2px;
+    outline-offset: 4px;
   }
 `;
 
 const FilledButton = styled(ButtonBase)`
   color: ${COLORS.white};
   background: ${COLORS.primary};
-  --btn-outline-color: ${COLORS.primary};
+  outline-color: ${COLORS.primary};
 
   &:hover {
     background: ${COLORS.primaryLight};
@@ -77,7 +76,7 @@ const OutlineButton = styled(ButtonBase)`
   color: ${COLORS.primary};
   border-color: ${COLORS.primary};
   background: ${COLORS.white};
-  --btn-outline-color: ${COLORS.primary};
+  outline-color: ${COLORS.primary};
 
   &:hover {
     background: ${COLORS.offwhite};
@@ -87,7 +86,7 @@ const OutlineButton = styled(ButtonBase)`
 const GhostButton = styled(ButtonBase)`
   color: ${COLORS.gray};
   background: transparent;
-  --btn-outline-color: ${COLORS.transparentGray75};
+  outline-color: ${COLORS.transparentGray75};
 
   &:hover {
     color: ${COLORS.black};
