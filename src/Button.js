@@ -3,58 +3,39 @@ import styled from "styled-components";
 
 import { COLORS } from "./constants";
 
+const SIZES = {
+  small: {
+    "--btn-font-size": 16,
+    "--btn-line-height": 19,
+    "--btn-border-radius": "2px",
+    "--btn-padding": "6px 14px"
+  },
+  medium: {
+    "--btn-font-size": 18,
+    "--btn-line-height": 21,
+    "--btn-border-radius": "2px",
+    "--btn-padding": "14px 22px"
+  },
+  large: {
+    "--btn-font-size": 21,
+    "--btn-line-height": 25,
+    "--btn-border-radius": "4px",
+    "--btn-padding": "18px 34px"
+  }
+};
+
 const Button = ({ variant, size, children }) => {
+  const styles = SIZES[size];
   if (variant === "outline") {
-    return <OutlineButton size={size}>{children}</OutlineButton>;
+    return <OutlineButton style={styles}>{children}</OutlineButton>;
   }
   if (variant === "ghost") {
-    return <GhostButton size={size}>{children}</GhostButton>;
+    return <GhostButton style={styles}>{children}</GhostButton>;
   }
-  return <FilledButton size={size}>{children}</FilledButton>;
+  return <FilledButton style={styles}>{children}</FilledButton>;
 };
 
 const ButtonBase = styled.button`
-  --btn-font-size: ${(props) => {
-    switch (props.size) {
-      case "small":
-        return 16;
-      case "medium":
-        return 18;
-      default:
-        return 21;
-    }
-  }};
-  --btn-line-height: ${(props) => {
-    switch (props.size) {
-      case "small":
-        return 19;
-      case "medium":
-        return 21;
-      default:
-        return 25;
-    }
-  }};
-  --btn-padding: ${(props) => {
-    switch (props.size) {
-      case "small":
-        return "6px 14px";
-      case "medium":
-        return "14px 22px";
-      default:
-        return "18px 34px";
-    }
-  }};
-  --btn-border-radius: ${(props) => {
-    switch (props.size) {
-      case "small":
-        return "2px";
-      case "medium":
-        return "2px";
-      default:
-        return "4px";
-    }
-  }};
-
   display: inline-block;
 
   font-family: Roboto;
