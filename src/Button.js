@@ -17,21 +17,21 @@ const ButtonBase = styled.button`
   --btn-font-size: ${(props) => {
     switch (props.size) {
       case "small":
-        return "1rem"; // 16px
+        return 16;
       case "medium":
-        return "1.125rem"; // 18px
+        return 18;
       default:
-        return "1.3125rem"; // 21px
+        return 21;
     }
   }};
   --btn-line-height: ${(props) => {
     switch (props.size) {
       case "small":
-        return "1.1875rem"; // 19px
+        return 19;
       case "medium":
-        return "1.3125rem"; // 21px
+        return 21;
       default:
-        return "1.5625rem"; // 25px
+        return 25;
     }
   }};
   --btn-padding: ${(props) => {
@@ -60,8 +60,8 @@ const ButtonBase = styled.button`
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: var(--btn-font-size);
-  line-height: var(--btn-line-height);
+  font-size: calc((var(--btn-font-size) / 16) * 1rem);
+  line-height: calc((var(--btn-line-height) / 16) * 1rem);
   letter-spacing: -0.02em;
   text-transform: uppercase;
 
