@@ -54,7 +54,7 @@ const ButtonBase = styled.button`
   text-transform: uppercase;
 
   padding: var(--btn-padding);
-  border: 2px solid;
+  border: 2px solid transparent;
   border-radius: var(--btn-border-radius);
 
   &:focus {
@@ -65,7 +65,6 @@ const ButtonBase = styled.button`
 
 const FilledButton = styled(ButtonBase)`
   color: ${COLORS.white};
-  border-color: ${COLORS.primary};
   background: ${COLORS.primary};
   --btn-outline-color: ${COLORS.primary};
 
@@ -87,7 +86,6 @@ const OutlineButton = styled(ButtonBase)`
 
 const GhostButton = styled(ButtonBase)`
   color: ${COLORS.gray};
-  border-color: transparent;
   background: transparent;
   --btn-outline-color: ${COLORS.transparentGray75};
 
