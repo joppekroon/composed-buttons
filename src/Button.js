@@ -26,14 +26,21 @@ const SIZES = {
 
 const Button = ({ variant, size, children }) => {
   const styles = SIZES[size];
-  if (variant === "outline") {
-    return <OutlineButton style={styles}>{children}</OutlineButton>;
-  }
-  if (variant === "ghost") {
-    return <GhostButton style={styles}>{children}</GhostButton>;
-  }
-  return <FilledButton style={styles}>{children}</FilledButton>;
+  const ButtonVariant = getVariant(variant);
+
+  return <ButtonVariant style={styles}>{children}</ButtonVariant>;
 };
+
+function getVariant(variant) {
+  switch (variant) {
+    case "outline":
+      return OutlineButton;
+    case "ghost":
+      return GhostButton;
+    default:
+      return FilledButton;
+  }
+}
 
 const ButtonBase = styled.button`
   display: inline-block;
