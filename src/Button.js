@@ -45,9 +45,7 @@ function getVariant(variant) {
 const ButtonBase = styled.button`
   display: inline-block;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
+  font-family: "Roboto", sans-serif;
   font-size: calc((var(--btn-font-size) / 16) * 1rem);
   line-height: calc((var(--btn-line-height) / 16) * 1rem);
   letter-spacing: -0.02em;
